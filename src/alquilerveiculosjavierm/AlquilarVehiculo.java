@@ -5,8 +5,9 @@
  */
 package alquilerveiculosjavierm;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Arrays;
+
 
 /**
  *
@@ -17,24 +18,29 @@ public class AlquilarVehiculo {
     private int mesAlquiler;
     private int añoAlquiler;
     private int totalDiasAlquiler;
-    private List <Cliente> clientes;
-    private List <Vehiculo> vehiculos;
-    private List <AlquilarVehiculo> alquileres;
+    private Cliente[] clientes;
+    private Vehiculo[] vehiculos;
+    private AlquilarVehiculo[] alquileres;
 
-    public AlquilarVehiculo(int diaAlquiler, int mesAlquiler, int añoAlquiler, int totalDiasAlquiler, List<Cliente> clientes, List<Vehiculo> vehiculos, List<AlquilarVehiculo> alquileres) {
+    public AlquilarVehiculo(int diaAlquiler, int mesAlquiler, int añoAlquiler, int totalDiasAlquiler, Cliente[] clientes, Vehiculo[] vehiculos, AlquilarVehiculo[] alquileres) {
         this.diaAlquiler = diaAlquiler;
         this.mesAlquiler = mesAlquiler;
         this.añoAlquiler = añoAlquiler;
         this.totalDiasAlquiler = totalDiasAlquiler;
-        this.clientes = new ArrayList<>();
-        this.vehiculos = new ArrayList<>();
-        this.alquileres = new ArrayList<>();
+        this.clientes = new Cliente[50];
+        this.vehiculos = new Vehiculo[50];
+        this.alquileres = new AlquilarVehiculo[100];
     }
 
     @Override
     public String toString() {
-        return "AlquilarVehiculo{" + "diaAlquiler=" + diaAlquiler + ", mesAlquiler=" + mesAlquiler + ", a\u00f1oAlquiler=" + añoAlquiler + ", totalDiasAlquiler=" + totalDiasAlquiler + ", clientes=" + clientes + ", vehiculos=" + vehiculos + ", alquileres=" + alquileres + '}';
+        return "AlquilarVehiculo{" + "diaAlquiler=" + diaAlquiler + ", mesAlquiler=" + mesAlquiler + ", a\u00f1oAlquiler=" + añoAlquiler + ", totalDiasAlquiler=" + totalDiasAlquiler + ", clientes=" + Arrays.toString(clientes) + ", vehiculos=" + vehiculos + ", alquileres=" + alquileres + '}';
     }
 
+   
+
+    
+
+    
     
 }
