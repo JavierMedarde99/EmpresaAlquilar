@@ -9,6 +9,6 @@ package alquilerveiculosjavierm;
  *
  * @author javi
  */
-public class vehiculo {
+public class Cliente {
     
 }
