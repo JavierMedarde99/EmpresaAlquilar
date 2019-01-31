@@ -57,5 +57,11 @@ System.out.println("NIF cliente\tNombre\n");
 for (int i=0; i<this.totalClientes; i++)
 System.out.println(clientes[i].toString());
 }
-     
+ 
+public void imprimirVehiculos() {
+System.out.println("Matricula\tModelo\tColor\tImporte\tDisponible\n");
+for (int i=0; i<this.totalVehiculos; i++)
+System.out.println(vehiculos[i].toString());
+}
+
 }
