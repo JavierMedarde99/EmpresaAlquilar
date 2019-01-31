@@ -19,11 +19,12 @@ public class AlquilarVehiculo {
     private int añoAlquiler;
     private int totalDiasAlquiler;
     private int totalClientes;
+    private int totalVehiculos;
     private Cliente[] clientes;
     private Vehiculo[] vehiculos;
     private AlquilarVehiculo[] alquileres;
 
-    public AlquilarVehiculo(int totalClientes,int diaAlquiler, int mesAlquiler, int añoAlquiler, int totalDiasAlquiler, Cliente[] clientes, Vehiculo[] vehiculos, AlquilarVehiculo[] alquileres) {
+    public AlquilarVehiculo(int totalVehiculos,int totalClientes,int diaAlquiler, int mesAlquiler, int añoAlquiler, int totalDiasAlquiler, Cliente[] clientes, Vehiculo[] vehiculos, AlquilarVehiculo[] alquileres) {
         this.diaAlquiler = diaAlquiler;
         this.mesAlquiler = mesAlquiler;
         this.añoAlquiler = añoAlquiler;
@@ -32,6 +33,8 @@ public class AlquilarVehiculo {
         this.vehiculos = new Vehiculo[50];
         this.alquileres = new AlquilarVehiculo[100];
         this.totalClientes= 0;
+        this.totalVehiculos= 0;
+        
     }
 
     @Override
@@ -44,6 +47,10 @@ this.clientes[this.totalClientes] = nuevo;
 this.totalClientes++;
 }
 
+    public void registrarVehiculo(Vehiculo nuevo) {
+this.vehiculos[this.totalVehiculos] = nuevo;
+this.totalVehiculos++;
+}
    
 
     
