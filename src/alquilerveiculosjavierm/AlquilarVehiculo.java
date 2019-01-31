@@ -52,9 +52,10 @@ this.vehiculos[this.totalVehiculos] = nuevo;
 this.totalVehiculos++;
 }
    
-
-    
-
-    
-    
+public void imprimirClientes() {
+System.out.println("NIF cliente\tNombre\n");
+for (int i=0; i<this.totalClientes; i++)
+System.out.println(clientes[i].toString());
+}
+     
 }
