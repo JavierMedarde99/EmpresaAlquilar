@@ -64,4 +64,13 @@ for (int i=0; i<this.totalVehiculos; i++)
 System.out.println(vehiculos[i].toString());
 }
 
+private Cliente getCliente(String nif) {
+for (Cliente c : this.clientes)
+if (c.getNif().equals(nif))
+
+return c;
+
+return null;
+}
+
 }
