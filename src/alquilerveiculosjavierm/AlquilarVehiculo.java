@@ -73,4 +73,12 @@ return c;
 return null;
 }
 
+private Vehiculo getVehiculo(String matricula) {
+for (Vehiculo c : this.vehiculos)
+if (c.getMatricula().equals(matricula))
+
+return c;
+
+return null;
+}
 }
