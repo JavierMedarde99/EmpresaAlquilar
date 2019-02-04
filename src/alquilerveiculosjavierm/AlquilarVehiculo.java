@@ -81,4 +81,14 @@ return c;
 
 return null;
 }
+public void alquilarVehiculo(String matricula, String nif,
+
+int dias) {
+
+Cliente cliente = getCliente(nif);
+Vehiculo vehiculo = getVehiculo(matricula);
+if (vehiculo.isDisponible()) {
+vehiculo.setDisponible(false);
+}
+}
 }
