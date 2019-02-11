@@ -30,29 +30,25 @@ public class Vehiculo {
 
     public Vehiculo() {
         Random rdm = new Random();
-        int a = rdm.nextInt(5);
+        String[] a = new String[4];
          int b = rdm.nextInt(5);
          int c = rdm.nextInt(5);
         double g = rdm.nextDouble();
         boolean z =rdm.nextBoolean();
                  
-         switch (a){
-             case 0:
-                 this.matricula="5423 GSH";
-                 break;
-                 case 1:
-                 this.matricula="8698 DAS";
-                 break;
-                 case 2:
-                 this.matricula="8769 UDI";
-                 break;
-                 case 3:
-                 this.matricula="2389 PDS";
-                 break;
-                 case 4:
-                 this.matricula="4592 SWA";
-                 break;
+          
+     
+         
+         for(int i=0;i<a.length;i++){
+             int d = rdm.nextInt(10);
+             String num = Integer.toString(d);
+             a[i]=num;
          }
+         char letra = (char) rdm.nextInt(65-122);
+         char letra2 = (char) rdm.nextInt(65-122);
+         char letra3 = (char) rdm.nextInt(65-122);
+         this.matricula=a[0]+a[1]+a[2]+a[3]+letra+letra2+letra3;
+        
          switch (b){
              case 0:
                  this.marca="Abarth";

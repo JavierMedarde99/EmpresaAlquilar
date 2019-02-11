@@ -25,26 +25,17 @@ public class Cliente {
 
      public Cliente() {
          Random rdm = new Random();
-         int a = rdm.nextInt(5);
+         String[] a = new String[7];
          int b = rdm.nextInt(5);
          int c = rdm.nextInt(5);
-         switch (a){
-             case 0:
-                 this.nif="78256389P";
-                 break;
-                 case 1:
-                 this.nif="12596578Z";
-                 break;
-                 case 2:
-                 this.nif="69585451T";
-                 break;
-                 case 3:
-                 this.nif="96528455G";
-                 break;
-                 case 4:
-                 this.nif="85957588H";
-                 break;
+         for(int i=0;i<a.length;i++){
+             int d = rdm.nextInt(10);
+             String num = Integer.toString(d);
+             a[i]=num;
          }
+         char letra = (char) rdm.nextInt(65-122);
+         this.nif=a[0]+a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+letra;
+        
         switch (b){
              case 0:
                  this.nombre="Javi";
