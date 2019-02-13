@@ -32,25 +32,26 @@ public class AlquilarVehiculo {
         this.totalClientes= 0;
         this.totalVehiculos= 0;
         this.vehiculos= new Vehiculo[50];
-       
         this.clientes= new Cliente[50];
         
     }
 
-    public Cliente[] RegistarClienteAleatorio(){
-         for(int i=0; i<clientes.length;i++){
+    public static Cliente[] RegistarClienteAleatorio(){
+        Cliente[] b = new Cliente [50];
+         for(int i=0; i<b.length;i++){
             Cliente a =new Cliente();
-            clientes[i]= a;
+            b[i]= a;
         } 
-        return clientes;
+        return b;
     }
     
-      public Vehiculo[] RegistarVehiculoAleatorio(){
-        for(int i=0; i<vehiculos.length;i++){
+      public static Vehiculo[] RegistarVehiculoAleatorio(){
+          Vehiculo[] b = new Vehiculo [50];
+        for(int i=0; i<50;i++){
             Vehiculo a =new Vehiculo();
-            this.vehiculos[i]= a;
+            a= b[i];
         }
-        return vehiculos;
+        return b;
         
     }
     
@@ -99,9 +100,9 @@ return c;
 }
 return null;
 }
-public void alquilarVehiculo(String matricula, String nif,
 
-int dias) {
+
+public void alquilarVehiculo(String matricula, String nif, int dias) {
 
 Cliente cliente = getCliente(nif);
 Vehiculo vehiculo = getVehiculo(matricula);
@@ -109,4 +110,6 @@ if (vehiculo.isDisponible()) {
 vehiculo.setDisponible(false);
 }
 }
+
+
 }
