@@ -24,22 +24,39 @@ public class AlquilarVehiculo {
     private Vehiculo[] vehiculos;
     private AlquilarVehiculo[] alquileres;
 
-    public AlquilarVehiculo(int totalVehiculos,int totalClientes,int diaAlquiler, int mesAlquiler, int añoAlquiler, int totalDiasAlquiler, Cliente[] clientes, Vehiculo[] vehiculos, AlquilarVehiculo[] alquileres) {
+    public AlquilarVehiculo(int diaAlquiler, int mesAlquiler, int añoAlquiler, int totalDiasAlquiler,Vehiculo[] vehiculos,Cliente[] cliente) {
         this.diaAlquiler = diaAlquiler;
         this.mesAlquiler = mesAlquiler;
         this.añoAlquiler = añoAlquiler;
         this.totalDiasAlquiler = totalDiasAlquiler;
-        this.clientes = new Cliente[50];
-        this.vehiculos = new Vehiculo[50];
-        this.alquileres = new AlquilarVehiculo[100];
         this.totalClientes= 0;
         this.totalVehiculos= 0;
+        this.vehiculos= new Vehiculo[50];
+       
+        this.clientes= new Cliente[50];
         
     }
 
+    public Cliente[] RegistarClienteAleatorio(){
+         for(int i=0; i<clientes.length;i++){
+            Cliente a =new Cliente();
+            clientes[i]= a;
+        } 
+        return clientes;
+    }
+    
+      public Vehiculo[] RegistarVehiculoAleatorio(){
+        for(int i=0; i<vehiculos.length;i++){
+            Vehiculo a =new Vehiculo();
+            this.vehiculos[i]= a;
+        }
+        return vehiculos;
+        
+    }
+    
     @Override
     public String toString() {
-        return "AlquilarVehiculo{" + "diaAlquiler=" + diaAlquiler + ", mesAlquiler=" + mesAlquiler + ", a\u00f1oAlquiler=" + añoAlquiler + ", totalDiasAlquiler=" + totalDiasAlquiler + ", clientes=" + Arrays.toString(clientes) + ", vehiculos=" + vehiculos + ", alquileres=" + alquileres + '}';
+        return "AlquilarVehiculo{" + "diaAlquiler=" + diaAlquiler + ", mesAlquiler=" + mesAlquiler + ", a\u00f1oAlquiler=" + añoAlquiler + ", totalDiasAlquiler=" + totalDiasAlquiler + ", clientes=" + Arrays.toString(clientes) + ", vehiculos=" + Arrays.toString(vehiculos) + ", alquileres=" + Arrays.toString(alquileres) + '}';
     }
     
     public void registrarCliente(Cliente nuevo) {
@@ -65,20 +82,21 @@ System.out.println(vehiculos[i].toString());
 }
 
 private Cliente getCliente(String nif) {
-for (Cliente c : this.clientes)
-if (c.getNif().equals(nif))
-
-return c;
-
+for (Cliente c : this.clientes){
+    if (c.getNif().equals(nif)){
+        return c;
+    }
+}
 return null;
 }
 
 private Vehiculo getVehiculo(String matricula) {
-for (Vehiculo c : this.vehiculos)
-if (c.getMatricula().equals(matricula))
+for (Vehiculo c : this.vehiculos){
+if (c.getMatricula().equals(matricula)){
 
 return c;
-
+}
+}
 return null;
 }
 public void alquilarVehiculo(String matricula, String nif,
