@@ -8,8 +8,6 @@ package alquilerveiculosjavierm;
 import static alquilerveiculosjavierm.AlquilarVehiculo.RegistarClienteAleatorio;
 import static alquilerveiculosjavierm.AlquilarVehiculo.RegistarVehiculoAleatorio;
 
-
-
 /**
  *
  * @author javi
@@ -20,13 +18,13 @@ public class AlquilerVeiculosJavierM {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Vehiculo[] b = new Vehiculo [50];
-        Cliente[] c = new Cliente [50];
-       b=RegistarVehiculoAleatorio();
-       c=RegistarClienteAleatorio();
-          AlquilarVehiculo a= new AlquilarVehiculo(11,5,6,12,b,c);
+        Vehiculo[] b = new Vehiculo[50];
+        Cliente[] c = new Cliente[50];
+        b = RegistarVehiculoAleatorio();
+        c = RegistarClienteAleatorio();
+        AlquilarVehiculo a = new AlquilarVehiculo(11, 5, 6, 12, b, c);
         a.imprimirClientes();
         a.imprimirVehiculos();
     }
-    
+
 }
