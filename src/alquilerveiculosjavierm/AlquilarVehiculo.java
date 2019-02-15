@@ -48,7 +48,7 @@ public class AlquilarVehiculo {
         Vehiculo[] b = new Vehiculo[50];
         for (int i = 0; i < 50; i++) {
             Vehiculo a = new Vehiculo();
-            a = b[i];
+            b[i] = a;
         }
         return b;
 

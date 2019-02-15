@@ -25,6 +25,10 @@ public class AlquilerVeiculosJavierM {
         AlquilarVehiculo a = new AlquilarVehiculo(11, 5, 6, 12, b, c);
         a.imprimirClientes();
         a.imprimirVehiculos();
+        a.OrdenacionBurbujaCliente();
+        a.OrdenacionBurbujaVehiculos();
+        System.out.println("¿Que cliente desea buscar?");
+        
     }
 
 }
