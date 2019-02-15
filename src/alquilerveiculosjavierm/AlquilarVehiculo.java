@@ -111,8 +111,15 @@ public class AlquilarVehiculo {
         }
     }
     
-    public void OrdenacionBurbuja(){
+    public Cliente[] OrdenacionBurbuja(){
+        Cliente tmp;
         
+	for (int i = 0; i < clientes.length-1; i++){
+		for (int j = i+1; j < clientes.length; j++){
+			
+		}
+	}
+return null;
     }
 
 }
