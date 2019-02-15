@@ -40,13 +40,13 @@ public class Vehiculo {
      
          
          for(int i=0;i<a.length;i++){
-             int d = rdm.nextInt(10);
+             int d = rdm.nextInt(9)+1;
              String num = Integer.toString(d);
              a[i]=num;
          }
-         char letra = (char) rdm.nextInt(65-122);
-         char letra2 = (char) rdm.nextInt(65-122);
-         char letra3 = (char) rdm.nextInt(65-122);
+         char letra = (char)(65 + rdm.nextInt(90 - 65));
+         char letra2 = (char) (65 + rdm.nextInt(90 - 65));
+         char letra3 = (char) (65 + rdm.nextInt(90 - 65));
          this.matricula=a[0]+a[1]+a[2]+a[3]+letra+letra2+letra3;
         
          switch (b){

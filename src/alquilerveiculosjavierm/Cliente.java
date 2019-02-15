@@ -33,7 +33,7 @@ public class Cliente {
              String num = Integer.toString(d);
              a[i]=num;
          }
-         char letra = (char) rdm.nextInt(65-122);
+         char letra = (char) (65 + rdm.nextInt(90 - 65));
          this.nif=a[0]+a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+letra;
         
         switch (b){

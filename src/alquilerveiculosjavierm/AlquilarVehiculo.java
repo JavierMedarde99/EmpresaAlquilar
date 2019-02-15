@@ -163,6 +163,29 @@ public class AlquilarVehiculo {
         } else {
             return -1;
         }
+    }
+         public int BusquedaBinariaVehiculos(Vehiculo vehiculo2) {
+        int compareTo;
+        int mitad = 0;
+        int izquierda = 0;
+        int derecha = vehiculos.length - 1;
+        boolean encontrado = false;
+        while ((izquierda <= derecha) && (!encontrado)) {
+            mitad = (izquierda + derecha) / 2;
+            compareTo = vehiculos[mitad].getMatricula().compareTo(vehiculos[mitad].getMatricula());
+            if (vehiculos[mitad] == vehiculo2) {
+                encontrado = true;
+            } else if (compareTo > 0) {
+                derecha = mitad - 1; //buscar en el trozo izquierdo
+            } else {
+                izquierda = mitad + 1; // buscar en el trozo derecho
+            }
+        }
+        if (encontrado) {
+            return mitad;
+        } else {
+            return -1;
+        }
 
     }
 
