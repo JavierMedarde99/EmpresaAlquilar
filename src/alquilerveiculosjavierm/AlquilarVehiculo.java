@@ -110,35 +110,60 @@ public class AlquilarVehiculo {
             vehiculo.setDisponible(false);
         }
     }
-    
-    public void OrdenacionBurbujaCliente(){
+
+    public void OrdenacionBurbujaCliente() {
         Cliente tmp;
         int compareTo;
-	for (int i = 0; i < clientes.length-1; i++){
-		for (int j = i+1; j < clientes.length; j++){
-                    compareTo=clientes[i].getNif().compareTo(clientes[j].getNif());
-                    if(compareTo >0){
-                        tmp = clientes[i];
-                        clientes[i]=clientes[j];
-                        clientes[j]=tmp;
-                    }
-		}
-	}
+        for (int i = 0; i < clientes.length - 1; i++) {
+            for (int j = i + 1; j < clientes.length; j++) {
+                compareTo = clientes[i].getNif().compareTo(clientes[j].getNif());
+                if (compareTo > 0) {
+                    tmp = clientes[i];
+                    clientes[i] = clientes[j];
+                    clientes[j] = tmp;
+                }
+            }
+        }
     }
-    
-        public void OrdenacionBurbujaVehiculos(){
+
+    public void OrdenacionBurbujaVehiculos() {
         Vehiculo tmp;
         int compareTo;
-	for (int i = 0; i < vehiculos.length-1; i++){
-		for (int j = i+1; j < vehiculos.length; j++){
-                    compareTo=vehiculos[i].getMatricula().compareTo(vehiculos[j].getMatricula());
-                    if(compareTo >0){
-                        tmp = vehiculos[i];
-                        vehiculos[i]=vehiculos[j];
-                        vehiculos[j]=tmp;
-                    }
-		}
-	}
+        for (int i = 0; i < vehiculos.length - 1; i++) {
+            for (int j = i + 1; j < vehiculos.length; j++) {
+                compareTo = vehiculos[i].getMatricula().compareTo(vehiculos[j].getMatricula());
+                if (compareTo > 0) {
+                    tmp = vehiculos[i];
+                    vehiculos[i] = vehiculos[j];
+                    vehiculos[j] = tmp;
+                }
+            }
+        }
+    }
+
+    public int BusquedaBinariaClientes(Cliente clientes1) {
+        int compareTo;
+        int mitad = 0;
+        int izquierda = 0;
+        int derecha = clientes.length - 1;
+        boolean encontrado = false;
+        while ((izquierda <= derecha) && (!encontrado)) {
+            mitad = (izquierda + derecha) / 2;
+            compareTo = clientes[mitad].getNif().compareTo(clientes[mitad].getNif());
+            if (clientes[mitad] == clientes1) {
+                encontrado = true;
+            } else if (compareTo > 0) {
+                derecha = mitad - 1; //buscar en el trozo izquierdo
+            } else {
+                izquierda = mitad + 1; // buscar en el trozo derecho
+            }
+        }
+        if (encontrado) {
+            return mitad;
+        } else {
+            return -1;
+        }
+
     }
 
 }
