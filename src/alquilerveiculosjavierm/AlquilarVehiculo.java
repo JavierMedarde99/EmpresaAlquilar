@@ -111,15 +111,34 @@ public class AlquilarVehiculo {
         }
     }
     
-    public Cliente[] OrdenacionBurbuja(){
+    public void OrdenacionBurbujaCliente(){
         Cliente tmp;
-        
+        int compareTo;
 	for (int i = 0; i < clientes.length-1; i++){
 		for (int j = i+1; j < clientes.length; j++){
-			
+                    compareTo=clientes[i].getNif().compareTo(clientes[j].getNif());
+                    if(compareTo >0){
+                        tmp = clientes[i];
+                        clientes[i]=clientes[j];
+                        clientes[j]=tmp;
+                    }
 		}
 	}
-return null;
+    }
+    
+        public void OrdenacionBurbujaVehiculos(){
+        Vehiculo tmp;
+        int compareTo;
+	for (int i = 0; i < vehiculos.length-1; i++){
+		for (int j = i+1; j < vehiculos.length; j++){
+                    compareTo=vehiculos[i].getMatricula().compareTo(vehiculos[j].getMatricula());
+                    if(compareTo >0){
+                        tmp = vehiculos[i];
+                        vehiculos[i]=vehiculos[j];
+                        vehiculos[j]=tmp;
+                    }
+		}
+	}
     }
 
 }
